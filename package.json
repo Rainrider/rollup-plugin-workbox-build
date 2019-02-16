@@ -1,0 +1,36 @@
+{
+	"name": "rollup-plugin-workbox-build",
+	"version": "0.0.1",
+	"description": "Rollup plugin that builds a service worker with workbox-build",
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.es.js",
+	"scripts": {
+		"build": "rollup -c",
+		"lint": "eslint src",
+		"security": "npm audit",
+		"watch": "rollup -cw"
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"rollup",
+		"rollup-plugin",
+		"service-worker",
+		"workbox"
+	],
+	"author": "Rainrider",
+	"license": "ISC",
+	"peerDependencies": {
+		"rollup": "1.x"
+	},
+	"devDependencies": {
+		"eslint": "^5.14.0",
+		"eslint-config-google": "^0.12.0",
+		"eslint-config-prettier": "^4.0.0",
+		"rollup": "^1.1.2"
+	},
+	"dependencies": {
+		"workbox-build": "^3.6.3"
+	}
+}
