@@ -36,6 +36,7 @@ export default function workbox({
 }) {
 	if (!(mode in WORKBOX_MODE)) throw new Error(`Invalid workbox mode: "${mode}"`);
 
+	const { swDest } = options; // TODO: sanitize + meaningful defaults
 	const build = WORKBOX_MODE[mode];
 
 	const doRender = ({ count, size }) => {
