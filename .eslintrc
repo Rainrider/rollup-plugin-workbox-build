@@ -1,34 +1,12 @@
 {
 	"env": { "es6": true, "node": true },
 	"parserOptions": { "sourceType": "module", "ecmaVersion": 6 },
-	"extends": ["google", "prettier"],
+	"extends": ["google", "plugin:prettier/recommended"],
 	"rules": {
 		"quotes": [
 			"error",
 			"single",
 			{ "avoidEscape": true, "allowTemplateLiterals": false }
-		],
-		"indent": [
-			"error",
-			"tab",
-			{
-				"CallExpression": {
-					"arguments": 2
-				},
-				"FunctionDeclaration": {
-					"body": 1,
-					"parameters": 2
-				},
-				"FunctionExpression": {
-					"body": 1,
-					"parameters": 2
-				},
-				"MemberExpression": 2,
-				"ObjectExpression": 1,
-				"SwitchCase": 1,
-				"ignoredNodes": ["ConditionalExpression"]
-			}
-		],
-		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
+		]
 	}
 }

@@ -5,7 +5,7 @@ import { generateSW, injectManifest } from 'workbox-build';
  */
 const WORKBOX_MODE = {
 	generateSW,
-	injectManifest
+	injectManifest,
 };
 
 /** @typedef {'generateSW'|'injectManifest'} workboxMode */
@@ -32,15 +32,15 @@ const report = ({ swDest, count, size }) => {
 export default function workbox({
 	options = {},
 	render = report,
-	mode = 'generateSW'
+	mode = 'generateSW',
 }) {
-	if (!(mode in WORKBOX_MODE)) throw new Error(`Invalid workbox mode: "${mode}"`);
+	if (!(mode in WORKBOX_MODE))
+		throw new Error(`Invalid workbox mode: "${mode}"`);
 
-	const { swDest } = options; // TODO: sanitize + meaningful defaults
 	const build = WORKBOX_MODE[mode];
 
 	const doRender = ({ count, size }) => {
-		render({ swDest, count, size });
+		render({ swDest: options.swDest, count, size });
 	};
 
 	return {
@@ -48,9 +48,9 @@ export default function workbox({
 
 		writeBundle(bundle) {
 			return build(options)
-					.then(doRender)
-					.catch(console.error);
-		}
+				.then(doRender)
+				.catch(console.error);
+		},
 	};
 }
 
