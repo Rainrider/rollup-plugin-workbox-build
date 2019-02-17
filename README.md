@@ -1,5 +1,7 @@
 ## rollup-plugin-workbox-build
 
+[![](https://img.shields.io/npm/v/rollup-plugin-workbox-build.svg?style=flat)](https://www.npmjs.com/package/rollup-plugin-workbox-build)
+
 Rollup plugin that builds a service worker as part of your rollup build by using
 [workbox-build](https://developers.google.com/web/tools/workbox/modules/workbox-build).
 
