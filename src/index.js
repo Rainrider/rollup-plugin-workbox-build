@@ -8,8 +8,6 @@ const WORKBOX_MODE = {
 	injectManifest,
 };
 
-/** @typedef {'generateSW'|'injectManifest'} workboxMode */
-
 /** @type {renderCallback} */
 const report = ({ swDest, count, size }) => {
 	let message = `Service worker: ${swDest}`;
@@ -54,14 +52,22 @@ export default function workbox({
 	};
 }
 
+/** @typedef {'generateSW'|'injectManifest'} workboxMode */
+
+/**
+ * workbox-build pre-caching statistics
+ *
+ * @typedef {object} WorkboxStats
+ * @property {string} swDest the path to the generated service worker
+ * @property {number} count  the number of files added for pre-caching
+ * @property {number} size   the pre-cache size in bytes
+ */
+
 /**
  * Renders service worker pre-caching statistics.
  *
  * @callback renderCallback
- * @param {object} stats
- * @param {string} stats.swDest the path to the generated service worker
- * @param {number} stats.count  the number of files added for pre-caching
- * @param {number} stats.size   the pre-cache size in bytes
+ * @param {WorkboxStats} stats
  *
  * @return {void}
  */
