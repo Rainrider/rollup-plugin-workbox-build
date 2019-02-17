@@ -34,6 +34,14 @@
 	],
 	"author": "Rainrider",
 	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Rainrider/rollup-plugin-workbox-build.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Rainrider/rollup-plugin-workbox-build/issues"
+	},
+	"homepage": "https://github.com/Rainrider/rollup-plugin-workbox-build/#readme",
 	"peerDependencies": {
 		"rollup": "1.x"
 	},
