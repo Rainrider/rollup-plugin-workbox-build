@@ -58,9 +58,10 @@ export default function workbox({
  * Renders service worker pre-caching statistics.
  *
  * @callback renderCallback
- * @param {string} swDest the destination of the generated service worker
- * @param {number} count  then number of files added for pre-caching
- * @param {number} size   the total size of files to be pre-cached in bits
-
+ * @param {object} stats
+ * @param {string} stats.swDest the path to the generated service worker
+ * @param {number} stats.count  the number of files added for pre-caching
+ * @param {number} stats.size   the pre-cache size in bytes
+ *
  * @return {void}
  */
