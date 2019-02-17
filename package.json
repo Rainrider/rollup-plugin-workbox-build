@@ -1,6 +1,6 @@
 {
 	"name": "rollup-plugin-workbox-build",
-	"version": "0.0.2",
+	"version": "0.1.0",
 	"description": "Rollup plugin that builds a service worker with workbox-build",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
