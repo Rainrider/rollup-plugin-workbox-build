@@ -12,8 +12,16 @@ workbox-build can pick-up bundled assets after they have been written to disk.
 
 ## Usage
 
+Install as usual with:
+
+```
+npm i -D rollup-plugin-workbox-build
+```
+
+and use like this:
+
 ```js
-import workbox from 'rollup-plugin-workbox'
+import workbox from 'rollup-plugin-workbox-build'
 
 export default {
   input: /*...*/,
