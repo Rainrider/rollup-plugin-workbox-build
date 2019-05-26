@@ -8,7 +8,7 @@ const WORKBOX_MODE = {
 	injectManifest,
 };
 
-/** @type {renderCallback} */
+/** @type {RenderCallback} */
 const report = ({ swDest, count, size }) => {
 	let message = `Service worker: ${swDest}`;
 	message += `\nFiles pre-cached: ${count}`;
@@ -20,10 +20,10 @@ const report = ({ swDest, count, size }) => {
 /**
  * Build me a service worker.
  *
- * @param {object}         options
- * @param {renderCallback} [options.render]          a callback to render service worker statistics
- * @param {workboxMode}    [options.mode=generateSW] the workbox build mode to use
- * @param {object}         options.options           The workbox configuration object
+ * @param {object}           options
+ * @param {RenderCallback}   [options.render]          callback to render service worker statistics
+ * @param {WorkboxBuildMode} [options.mode=generateSW] workbox-build mode to use
+ * @param {object}           options.options           workbox-build configuration object
  *
  * @return {Object}
  */
@@ -52,22 +52,22 @@ export default function workbox({
 	};
 }
 
-/** @typedef {'generateSW'|'injectManifest'} workboxMode */
+/** @typedef {'generateSW'|'injectManifest'} WorkboxBuildMode */
 
 /**
- * workbox-build pre-caching statistics
+ * Workbox-build pre-caching statistics.
  *
- * @typedef {object} WorkboxStats
- * @property {string} swDest the path to the generated service worker
- * @property {number} count  the number of files added for pre-caching
- * @property {number} size   the pre-cache size in bytes
+ * @typedef {object} WorkboxBuildStats
+ * @property {string} swDest path to the generated service worker
+ * @property {number} count  number of files added for pre-caching
+ * @property {number} size   pre-cache size in bytes
  */
 
 /**
- * Renders service worker pre-caching statistics.
+ * Prints service worker pre-caching statistics.
  *
- * @callback renderCallback
- * @param {WorkboxStats} stats
+ * @callback RenderCallback
+ * @param {WorkboxBuildStats} stats
  *
  * @return {void}
  */

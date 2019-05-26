@@ -4,8 +4,9 @@
 	"description": "Rollup plugin that builds a service worker with workbox-build",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "rollup -c",
+		"build": "rollup -c && shx cp src/index.d.ts dist/",
 		"lint": "eslint src",
 		"prebuild": "shx rm -rf dist/*",
 		"prepare": "npm run lint && npm run build",
