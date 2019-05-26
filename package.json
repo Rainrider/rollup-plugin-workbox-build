@@ -58,6 +58,6 @@
 		"shx": "^0.3.2"
 	},
 	"dependencies": {
-		"workbox-build": "^3.6.3"
+		"workbox-build": "^4.3.1"
 	}
 }

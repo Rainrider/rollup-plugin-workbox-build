@@ -33,7 +33,7 @@ export default function workbox({
 	mode = 'generateSW',
 }) {
 	if (!(mode in WORKBOX_MODE))
-		throw new Error(`Invalid workbox mode: "${mode}"`);
+		throw new Error(`Unsupported workbox mode: "${mode}"`);
 
 	const build = WORKBOX_MODE[mode];
 
